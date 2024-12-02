@@ -1,0 +1,46 @@
+create database shs_result_management;
+
+use shs_result_management; 
+
+CREATE TABLE admin (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE courses (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    course_code VARCHAR(10) NOT NULL UNIQUE,
+    course_name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE results (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    student_id VARCHAR(20) NOT NULL,
+    course_code VARCHAR(10) NOT NULL,
+    marks INT(11) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE,
+    FOREIGN KEY (course_code) REFERENCES courses(course_code) ON DELETE CASCADE
+);
+
+CREATE TABLE students (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    student_id VARCHAR(20) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    class VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user',
+    student_id VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE
+);
