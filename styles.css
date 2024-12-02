@@ -1,0 +1,147 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(images/bg-donacopy.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+nav {
+    margin-top: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Animation for text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 12px 20px;
+        margin: 8px;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;  /* Box width with max constraint */
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Adds shadow to create box effect */
+    border-radius: 8px;  /* Rounded corners */
+    border: 1px solid #ddd;  /* Border around the box */
+}
+
+/* Heading Styles */
+h1 {
+    color: #222;
+    margin: 20px 0;
+    font-size: 2.5rem;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background-color: #007BFF;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
